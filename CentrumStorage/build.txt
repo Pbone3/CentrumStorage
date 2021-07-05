@@ -1,0 +1,8 @@
+displayName = Centrum Storage
+author = pbone
+version = 1.0
+modReferences = PboneLib
+hideCode = false
+includePDB = true
+hideResources = false
+includeSource = true
