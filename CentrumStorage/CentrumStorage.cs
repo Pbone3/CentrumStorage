@@ -1,3 +1,4 @@
+using CentrumStorage.IO;
 using CentrumStorage.UI.States;
 using Microsoft.Xna.Framework;
 using PboneLib.Core.UI;
@@ -5,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 using Terraria.UI;
 
 namespace CentrumStorage
@@ -22,6 +24,8 @@ namespace CentrumStorage
         public override void Load()
         {
             base.Load();
+
+            TagSerializer.AddSerializer(new GuidSerializer());
 
             ui = new UIManager(this);
             if (!Main.dedServ)

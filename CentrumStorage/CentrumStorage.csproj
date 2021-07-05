@@ -17,4 +17,7 @@
     <Folder Include="Tiles\" />
     <Folder Include="UI\Elements\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PboneLib\PboneLib.csproj" />
+  </ItemGroup>
 </Project>

@@ -9,6 +9,13 @@ namespace CentrumStorage.IO
             ["Raw"] = value.ToByteArray()
         };
 
-        public override Guid Deserialize(TagCompound tag) => new Guid(tag.Get<byte[]>("Raw"));
+        public override Guid Deserialize(TagCompound tag)
+        {
+            byte[] b = tag.Get<byte[]>("Raw");
+            if (b.Length != 16)
+                return default;
+
+            return new Guid(b);
+        }
     }
 }
