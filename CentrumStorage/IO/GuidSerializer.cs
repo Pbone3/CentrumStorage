@@ -12,7 +12,7 @@ namespace CentrumStorage.IO
         public override Guid Deserialize(TagCompound tag)
         {
             byte[] b = tag.Get<byte[]>("Raw");
-            if (b.Length != 16)
+            if (b.Length != 16) // Fail-safe I added while doing testing
                 return default;
 
             return new Guid(b);

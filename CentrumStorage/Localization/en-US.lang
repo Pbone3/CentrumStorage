@@ -1,0 +1,8 @@
+﻿// ITEMS
+// Materials
+ItemName.CircuitBoard=Circuit Board
+ItemTooltip.CircuitBoard=Used for basic tech crafting
+
+// Drives
+ItemName.BasicDrive=Basic Drive
+ItemTooltip.BasicDrive=Stores 100 items

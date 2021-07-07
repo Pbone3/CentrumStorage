@@ -16,8 +16,10 @@ namespace CentrumStorage
         public static CentrumStorage Instance => ModContent.GetInstance<CentrumStorage>();
 
         public static UIManager UI => Instance.ui;
+        public static RecipeManager Recipes => Instance.recipes;
 
 		private UIManager ui;
+        private RecipeManager recipes;
 
         public Guid StorageInterface;
 
@@ -33,11 +35,17 @@ namespace CentrumStorage
                 StorageInterface = ui.QuickCreateInterface("Vanilla: Mouse Text");
                 ui.RegisterUI<StorageUI>(StorageInterface);
             }
+
+            recipes = new RecipeManager(this);
         }
 
         #region UI
         public override void UpdateUI(GameTime gameTime) => ui.UpdateUI(gameTime);
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers) => ui.ModifyInterfaceLayers(layers);
+        #endregion
+
+        #region Recipes
+        public override void AddRecipeGroups() => recipes.AddRecipeGroups();
         #endregion
     }
 }
